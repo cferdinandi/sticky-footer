@@ -73,7 +73,7 @@ Sticky Footer includes smart defaults and works right out of the box. But if you
 You can pass callbacks into Sticky Footer through the `init()` function:
 
 ```javascript
-sticky-footer.init({
+stickyFooter.init({
 	callbacks: {
 		before: function () {}, // Runs before the footer is stuck
 		after: function () {} // Runs after the footer is stuck

@@ -106,12 +106,21 @@
 	 * @public
 	 */
 	stickyFooter.destroy = function () {
+
 		if ( !settings ) return;
+
+		// Unset styles
+		document.documentElement.style.height = '';
+		document.body.style.height = '';
+		wrap.style.minHeight = '';
 		window.removeEventListener( 'resize', eventThrottler, false );
+
+		// Reset variables
 		settings = null;
 		wrap = null;
 		footer = null;
 		eventTimeout = null;
+
 	};
 
 	/**
@@ -153,7 +162,7 @@
 		document.documentElement.style.height = '100%';
 		document.body.style.height = '100%';
 		setWrapHeight( wrap, footer, settings );
-		window.addEventListener( 'resize', eventThrottler.bind( null, eventTimeout, wrap, footer, options ), false); // Run Sticky Footer on window resize
+		window.addEventListener( 'resize', eventThrottler.bind( null, eventTimeout, wrap, footer, settings ), false); // Run Sticky Footer on window resize
 
 	};
 
