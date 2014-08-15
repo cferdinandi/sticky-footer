@@ -56,7 +56,7 @@ In the footer of your page, after the content, initialize Sticky Footer. And tha
 
 ## Installing with Package Managers
 
-You can install NAMEPSACE-UP with your favorite package manager.
+You can install Sticky Footer with your favorite package manager.
 
 * **NPM:** `npm install cferdinandi/sticky-footer`
 * **Bower:** `bower install https://github.com/cferdinandi/sticky-footer.git`
