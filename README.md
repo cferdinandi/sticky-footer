@@ -85,7 +85,7 @@ sticky-footer.init({
 
 You can also call Sticky Footer events in your own scripts.
 
-#### stickyFooter.destroy()
+#### destroy()
 Destroy the current `stickyFooter.init()`.
 
 ```javascript
