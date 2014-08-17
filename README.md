@@ -22,12 +22,11 @@ Compiled and production-ready code can be found in the `dist` directory. The `sr
 ### 1. Include Sticky Footer on your site.
 
 ```html
-<script src="dist/js/classList.js"></script>
 <script src="dist/js/bind-polyfill.js"></script>
 <script src="dist/js/sticky-footer.js"></script>
 ```
 
-Sticky Footer requires [classList.js](https://github.com/eligrey/classList.js) and `bind-polyfill.js`, polyfills that extend ECMAScript 5 API support to more browsers.
+Sticky Footer requires `bind-polyfill.js`, a polyfill that extends ECMAScript 5 API support to more browsers.
 
 ### 2. Add the markup to your HTML.
 
