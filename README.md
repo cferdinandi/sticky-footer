@@ -73,10 +73,8 @@ You can pass callbacks into Sticky Footer through the `init()` function:
 
 ```javascript
 stickyFooter.init({
-	callbacks: {
-		before: function () {}, // Runs before the footer is stuck
-		after: function () {} // Runs after the footer is stuck
-	}
+	callbackBefore: function () {}, // Runs before the footer is stuck
+	callbackAfter: function () {} // Runs after the footer is stuck
 });
 ```
 
@@ -117,5 +115,7 @@ Sticky Footer is licensed under the [MIT License](http://gomakethings.com/mit/).
 
 Sticky Footer uses [semantic versioning](http://semver.org/).
 
+* v2.0.0 - August 18, 2014
+	* Updated callback variables.
 * v1.0.0 - August 15, 2014
 	* Initial release.

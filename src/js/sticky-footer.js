@@ -20,10 +20,8 @@
 
 	// Default settings
 	var defaults = {
-		callbacks: {
-			before: function () {},
-			after: function () {}
-		}
+		callbackBefore: function () {},
+		callbackAfter: function () {}
 	};
 
 
@@ -87,9 +85,9 @@
 	 * @param {Object} settings
 	 */
 	var setWrapHeight = function ( wrap, footer, settings ) {
-		settings.callbacks.before(); // Run callbacks before...
+		settings.callbackBefore(); // Run callbacks before...
 		wrap.style.minHeight = ( getViewportHeight() - footer.offsetHeight ) + 'px';
-		settings.callbacks.after(); // Run callbacks after...
+		settings.callbackAfter(); // Run callbacks after...
 	};
 
 	/**
