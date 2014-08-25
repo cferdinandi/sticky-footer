@@ -1,7 +1,7 @@
 # Sticky Footer [![Build Status](https://travis-ci.org/cferdinandi/sticky-footer.svg)](https://travis-ci.org/cferdinandi/sticky-footer)
 Responsive sticky footers that adjust dynamically as the screen size changes.
 
-[Download Sticky Footer](https://github.com/cferdinandi/sticky-footer/archive/master.zip) / [View the demo](http://cferdinandi.github.io/sticky-footer/).
+[Download Sticky Footer](https://github.com/cferdinandi/sticky-footer/archive/master.zip) / [View the demo](http://cferdinandi.github.io/sticky-footer/)
 
 **In This Documentation**
 
