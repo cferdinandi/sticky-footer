@@ -120,7 +120,7 @@
 	 * @param  {NodeList} footer The footer for the page
 	 * @param  {Object} settings
 	 */
-	var eventThrottler = function ( eventTimeout, wrap, footer, settings ) {
+	var eventThrottler = function () {
 		if ( !eventTimeout ) {
 			eventTimeout = setTimeout(function() {
 				eventTimeout = null;
@@ -151,7 +151,7 @@
 		document.documentElement.style.minHeight = '100%';
 		document.body.style.minHeight = '100%';
 		setWrapHeight( wrap, footer, settings );
-		window.addEventListener( 'resize', eventThrottler.bind( null, eventTimeout, wrap, footer, settings ), false); // Run Sticky Footer on window resize
+		window.addEventListener( 'resize', eventThrottler, false); // Run Sticky Footer on window resize
 
 	};
 
