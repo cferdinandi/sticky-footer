@@ -1,5 +1,5 @@
 /**
- * sticky-footer v2.0.2
+ * sticky-footer v2.0.3
  * Responsive sticky footers, by Chris Ferdinandi.
  * http://github.com/cferdinandi/sticky-footer
  * 
@@ -15,7 +15,7 @@
 	} else {
 		root.stickyFooter = factory(root);
 	}
-})(window || this, function (root) {
+})(this, function (root) {
 
 	'use strict';
 
