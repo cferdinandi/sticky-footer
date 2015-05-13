@@ -135,6 +135,8 @@ Sticky Footer is licensed under the [MIT License](http://gomakethings.com/mit/).
 
 Sticky Footer uses [semantic versioning](http://semver.org/).
 
+* v2.0.4 - May 13, 2015
+	* Fixed Browserify `window` bug.
 * v2.0.3 - March 9, 2015
 	* Fixed UMD wrapper.
 * v2.0.2 - October 18, 2014
