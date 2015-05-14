@@ -12,7 +12,6 @@ Responsive sticky footers that adjust dynamically as the screen size changes.
 5. [Browser Compatibility](#browser-compatibility)
 6. [How to Contribute](#how-to-contribute)
 7. [License](#license)
-8. [Changelog](#changelog)
 
 
 
@@ -128,24 +127,3 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 ## License
 
 Sticky Footer is licensed under the [MIT License](http://gomakethings.com/mit/).
-
-
-
-## Changelog
-
-Sticky Footer uses [semantic versioning](http://semver.org/).
-
-* v2.0.4 - May 13, 2015
-	* Fixed Browserify `window` bug.
-* v2.0.3 - March 9, 2015
-	* Fixed UMD wrapper.
-* v2.0.2 - October 18, 2014
-	* Removed `.bind` dependency and polyfill.
-	* Updated `gulpfile.js` tasks and namespacing.
-* v2.0.1 - October 2, 2014
-	* Fixed CommonJS bug.
-	* Added lazypipe to `gulpfile.js`.
-* v2.0.0 - August 18, 2014
-	* Updated callback variables.
-* v1.0.0 - August 15, 2014
-	* Initial release.
