@@ -1,5 +1,5 @@
 /**
- * sticky-footer v2.0.4
+ * sticky-footer v3.0.0
  * Responsive sticky footers, by Chris Ferdinandi.
  * http://github.com/cferdinandi/sticky-footer
  * 
@@ -9,13 +9,13 @@
 
 (function (root, factory) {
 	if ( typeof define === 'function' && define.amd ) {
-		define([], factory(root));
+		define(['buoy'], factory(root));
 	} else if ( typeof exports === 'object' ) {
-		module.exports = factory(root);
+		module.exports = factory(root, require('buoy'));
 	} else {
-		root.stickyFooter = factory(root);
+		root.stickyFooter = factory(root, root.buoy);
 	}
-})(typeof global !== "undefined" ? global : this.window || this.global, function (root) {
+})(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
 
 	'use strict';
 
@@ -29,53 +29,13 @@
 
 	// Default settings
 	var defaults = {
-		callbackBefore: function () {},
-		callbackAfter: function () {}
+		callback: function () {}
 	};
 
 
 	//
 	// Methods
 	//
-
-	/**
-	 * A simple forEach() implementation for Arrays, Objects and NodeLists
-	 * @private
-	 * @param {Array|Object|NodeList} collection Collection of items to iterate
-	 * @param {Function} callback Callback function for each iteration
-	 * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
-	 */
-	var forEach = function (collection, callback, scope) {
-		if (Object.prototype.toString.call(collection) === '[object Object]') {
-			for (var prop in collection) {
-				if (Object.prototype.hasOwnProperty.call(collection, prop)) {
-					callback.call(scope, collection[prop], prop, collection);
-				}
-			}
-		} else {
-			for (var i = 0, len = collection.length; i < len; i++) {
-				callback.call(scope, collection[i], i, collection);
-			}
-		}
-	};
-
-	/**
-	 * Merge defaults with user options
-	 * @private
-	 * @param {Object} defaults Default settings
-	 * @param {Object} options User options
-	 * @returns {Object} Merged values of defaults and options
-	 */
-	var extend = function ( defaults, options ) {
-		var extended = {};
-		forEach(defaults, function (value, prop) {
-			extended[prop] = defaults[prop];
-		});
-		forEach(options, function (value, prop) {
-			extended[prop] = options[prop];
-		});
-		return extended;
-	};
 
 	/**
 	 * Get height of the viewport
@@ -94,9 +54,8 @@
 	 * @param {Object} settings
 	 */
 	var setWrapHeight = function ( wrap, footer, settings ) {
-		settings.callbackBefore(); // Run callbacks before...
 		wrap.style.minHeight = ( getViewportHeight() - footer.offsetHeight ) + 'px';
-		settings.callbackAfter(); // Run callbacks after...
+		settings.callback(); // Run callback
 	};
 
 	/**
@@ -152,7 +111,7 @@
 		stickyFooter.destroy();
 
 		// Selectors and variables
-		settings = extend( defaults, options || {} ); // Merge user options with defaults
+		settings = buoy.extend( defaults, options || {} ); // Merge user options with defaults
 		wrap = document.querySelector( '[data-sticky-wrap]' );
 		footer = document.querySelector( '[data-sticky-footer]' );
 
