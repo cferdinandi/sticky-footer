@@ -1,5 +1,5 @@
 /**
- * sticky-footer v3.0.0
+ * sticky-footer v4.0.0
  * Responsive sticky footers, by Chris Ferdinandi.
  * http://github.com/cferdinandi/sticky-footer
  * 
@@ -9,11 +9,11 @@
 
 (function (root, factory) {
 	if ( typeof define === 'function' && define.amd ) {
-		define(['buoy'], factory(root));
+		define([], factory(root));
 	} else if ( typeof exports === 'object' ) {
-		module.exports = factory(root, require('buoy'));
+		module.exports = factory(root);
 	} else {
-		root.stickyFooter = factory(root, root.buoy);
+		root.stickyFooter = factory(root);
 	}
 })(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
 
@@ -36,6 +36,51 @@
 	//
 	// Methods
 	//
+
+	/**
+	 * Merge two or more objects. Returns a new object.
+	 * @private
+	 * @param {Boolean}  deep     If true, do a deep (or recursive) merge [optional]
+	 * @param {Object}   objects  The objects to merge together
+	 * @returns {Object}          Merged values of defaults and options
+	 */
+	var extend = function () {
+
+		// Variables
+		var extended = {};
+		var deep = false;
+		var i = 0;
+		var length = arguments.length;
+
+		// Check if a deep merge
+		if ( Object.prototype.toString.call( arguments[0] ) === '[object Boolean]' ) {
+			deep = arguments[0];
+			i++;
+		}
+
+		// Merge the object into the extended object
+		var merge = function (obj) {
+			for ( var prop in obj ) {
+				if ( Object.prototype.hasOwnProperty.call( obj, prop ) ) {
+					// If deep merge and property is an object, merge properties
+					if ( deep && Object.prototype.toString.call(obj[prop]) === '[object Object]' ) {
+						extended[prop] = extend( true, extended[prop], obj[prop] );
+					} else {
+						extended[prop] = obj[prop];
+					}
+				}
+			}
+		};
+
+		// Loop through each object and conduct a merge
+		for ( ; i < length; i++ ) {
+			var obj = arguments[i];
+			merge(obj);
+		}
+
+		return extended;
+
+	};
 
 	/**
 	 * Get height of the viewport
@@ -111,7 +156,7 @@
 		stickyFooter.destroy();
 
 		// Selectors and variables
-		settings = buoy.extend( defaults, options || {} ); // Merge user options with defaults
+		settings = extend( defaults, options || {} ); // Merge user options with defaults
 		wrap = document.querySelector( '[data-sticky-wrap]' );
 		footer = document.querySelector( '[data-sticky-footer]' );
 

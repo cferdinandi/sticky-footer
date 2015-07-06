@@ -21,10 +21,7 @@ Compiled and production-ready code can be found in the `dist` directory. The `sr
 
 ### 1. Include Sticky Footer on your site.
 
-Sticky Footer also requires [Buoy](https://github.com/cferdinandi/buoy), a lightweight collection of helper methods for getting stuff done with native JavaScript.
-
 ```html
-<script src="dist/js/_buoy.js"></script>
 <script src="dist/js/sticky-footer.js"></script>
 ```
 
