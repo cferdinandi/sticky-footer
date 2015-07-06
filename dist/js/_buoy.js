@@ -1,5 +1,5 @@
 /**
- * sticky-footer v3.0.0
+ * sticky-footer v4.0.0
  * Responsive sticky footers, by Chris Ferdinandi.
  * http://github.com/cferdinandi/sticky-footer
  * 
