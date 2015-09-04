@@ -1,10 +1,8 @@
-/**
- * sticky-footer v4.0.0
- * Responsive sticky footers, by Chris Ferdinandi.
+/*!
+ * sticky-footer v4.1.0: Responsive sticky footers
+ * (c) 2015 Chris Ferdinandi
+ * MIT License
  * http://github.com/cferdinandi/sticky-footer
- * 
- * Free to use under the MIT License.
- * http://gomakethings.com/mit/
  */
 
 (function (root, factory) {
@@ -24,11 +22,13 @@
 	//
 
 	var stickyFooter = {}; // Object for public APIs
-	var supports = !!document.querySelector && !!root.addEventListener; // Feature test
+	var supports = 'querySelector' in document && 'addEventListener' in root; // Feature test
 	var settings, wrap, footer, eventTimeout;
 
 	// Default settings
 	var defaults = {
+		selectorWrap: '[data-sticky-wrap]',
+		selectorFooter: '[data-sticky-footer]',
 		callback: function () {}
 	};
 
@@ -157,8 +157,8 @@
 
 		// Selectors and variables
 		settings = extend( defaults, options || {} ); // Merge user options with defaults
-		wrap = document.querySelector( '[data-sticky-wrap]' );
-		footer = document.querySelector( '[data-sticky-footer]' );
+		wrap = document.querySelector( settings.selectorWrap );
+		footer = document.querySelector( settings.selectorFooter );
 
 		// Stick footer
 		document.documentElement.style.minHeight = '100%';
