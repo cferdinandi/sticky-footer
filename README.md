@@ -77,6 +77,7 @@ Make sure these are installed first.
 3. When it's done installing, run one of the task runners to get going:
 	* `gulp` manually compiles files.
 	* `gulp watch` automatically compiles files when changes are made and applies changes using [LiveReload](http://livereload.com/).
+	* `gulp test` compiles files and runs unit tests.
 
 
 
@@ -90,6 +91,8 @@ You can pass callbacks into Sticky Footer through the `init()` function:
 
 ```javascript
 stickyFooter.init({
+	selectorWrap: '[data-sticky-wrap]', // Selector for the wrap container (must use a valid CSS selector)
+	selectorFooter: '[data-sticky-footer]', // Selector for the footer (must use a valid CSS selector)
 	callback: function () {}, // Runs after the footer is stuck
 });
 ```
