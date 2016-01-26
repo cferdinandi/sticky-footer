@@ -153,6 +153,9 @@
 		wrap = document.querySelector( settings.selectorWrap );
 		footer = document.querySelector( settings.selectorFooter );
 
+		// Sanity check
+		if ( !wrap || !footer ) return;
+
 		// Stick footer
 		document.documentElement.style.minHeight = '100%';
 		document.body.style.minHeight = '100%';
