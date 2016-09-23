@@ -1,5 +1,5 @@
 /*!
- * sticky-footer v4.1.1: Responsive sticky footers
+ * sticky-footer v4.2.0: Responsive sticky footers
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * http://github.com/cferdinandi/sticky-footer
@@ -13,7 +13,7 @@
 	} else {
 		root.stickyFooter = factory(root);
 	}
-})(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
+})(typeof global !== 'undefined' ? global : this.window || this.global, (function (root) {
 
 	'use strict';
 
@@ -135,10 +135,10 @@
 	 */
 	var eventThrottler = function () {
 		if ( !eventTimeout ) {
-			eventTimeout = setTimeout(function() {
+			eventTimeout = setTimeout((function() {
 				eventTimeout = null;
 				setWrapHeight( wrap, footer, settings );
-			}, 66);
+			}), 66);
 		}
 	};
 
@@ -178,4 +178,4 @@
 
 	return stickyFooter;
 
-});
+}));
