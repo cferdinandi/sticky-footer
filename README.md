@@ -3,15 +3,12 @@ Responsive sticky footers that adjust dynamically as the screen size changes.
 
 [Download Sticky Footer](https://github.com/cferdinandi/sticky-footer/archive/master.zip) / [View the demo](http://cferdinandi.github.io/sticky-footer/)
 
-**In This Documentation**
 
-1. [Getting Started](#getting-started)
-2. [Installing with Package Managers](#installing-with-package-managers)
-3. [Working with the Source Files](#working-with-the-source-files)
-4. [Options & Settings](#options-and-settings)
-5. [Browser Compatibility](#browser-compatibility)
-6. [How to Contribute](#how-to-contribute)
-7. [License](#license)
+<hr>
+
+### Want to learn how to write your own vanilla JS plugins? Check out ["The Vanilla JS Guidebook"](https://gomakethings.com/vanilla-js-guidebook/) and level-up as a web developer. 🚀
+
+<hr>
 
 
 
